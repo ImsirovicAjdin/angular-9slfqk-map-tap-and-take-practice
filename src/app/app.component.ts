@@ -16,7 +16,13 @@ export class AppComponent implements OnInit {
       .pipe( 
         tap(item => console.log(`emitted item: ${item}`)),
         map(item => item * 2),
-        map(item => item - 10)
+        map(item => item - 10),
+        map(item => {
+          if (item === 0) {
+            throw new Error('Zero detected!');
+          }
+          return item;
+        })
       )
       .subscribe(
         item => console.log(`resulting item .. ${item}`),
