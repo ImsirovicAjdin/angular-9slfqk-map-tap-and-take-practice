@@ -22,7 +22,8 @@ export class AppComponent implements OnInit {
             throw new Error('Zero detected!');
           }
           return item;
-        })
+        }),
+        take(3)
       )
       .subscribe(
         item => console.log(`resulting item .. ${item}`),
