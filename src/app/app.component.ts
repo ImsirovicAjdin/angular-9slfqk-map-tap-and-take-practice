@@ -14,7 +14,8 @@ export class AppComponent implements OnInit {
 
     from([20, 15, 10, 5])
       .pipe( 
-        map(item => item * 2)
+        map(item => item * 2),
+        map(item => item - 10)
       )
       .subscribe(
         item => console.log(`resulting item .. ${item}`),
