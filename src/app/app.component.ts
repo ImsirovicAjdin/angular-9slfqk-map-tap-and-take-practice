@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
 
-    from([20, 15, 10, 5]).pipe().subscribe(
+    from([20, 15, 10, 5]).pipe( map(item => item * 2)).subscribe(
       item => console.log(`resulting item .. ${item}`),
       err => console.log(`error occured .. ${err}`),
       () => console.log('complete')
