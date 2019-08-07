@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
       )
       .subscribe(
         item => console.log(`resulting item .. ${item}`),
-        err => console.log(`error occured .. ${err}`),
+        err => console.error(`error occured .. ${err}`),
         () => console.log('complete')
       )
     
