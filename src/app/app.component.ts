@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
 
     from([20, 15, 10, 5])
       .pipe( 
+        tap(item => console.log(`emitted item: ${item}`)),
         map(item => item * 2),
         map(item => item - 10)
       )
